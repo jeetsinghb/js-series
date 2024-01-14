@@ -12,7 +12,7 @@ let valueInNumber = Number(score)
 // "33abc" => NaN
 // true => 1; false => 0
 // null => 0
-// undefined => Nan
+// undefined => NaN
 
 let isLoggedIn = "Tarjeet"
 
@@ -21,7 +21,7 @@ let booleanIsLoggedIn = Boolean(isLoggedIn)
 
 // 1 => true; 0 = false
 // "" => false
-// "hitest" => true
+// "John" => true
 
 let someNumber = 33
 
@@ -42,7 +42,7 @@ let negValue = -3
 // console.log(2/3);
 // console.log(2%3);
 
-let str1 = "hello"
+let str1 = "Hello"
 let str2 = " Tarjeet"
 
 let str3 = str1 + str2
