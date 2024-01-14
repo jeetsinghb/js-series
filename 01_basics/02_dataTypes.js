@@ -1,7 +1,7 @@
-"use strict"; // treat all JS code as newer version
+"use strict"; // treat all JS code as a newer version
 
 // alert(3 + 3); // we are using nodejs, not browser
-// JS engine is in browser
+// JS engine is in the browser
 
 
 let name = "Tarjeet"; // string value
@@ -14,7 +14,7 @@ let isLoggedIn = true; // boolean value
 // number
 // bigint
 // string => ""
-// boolean => true/galse
+// boolean => true/false
 // null => standalone value
 // undefined =>
 // symbol => unique
