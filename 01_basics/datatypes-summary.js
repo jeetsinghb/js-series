@@ -3,8 +3,18 @@
 // 7 Types: String, Number, Boolean, null, undefined, Symbol. BigInt
 
 /*
-Javascript is Dynamically typed language
+Javascript is a Dynamically typed language
 JavaScript is a dynamically typed language, which means that data types of variables are determined by the value they hold at runtime and can change throughout the program as we assign different values to them.
+*/
+
+/*
+
+// Runtime
+In contrast, JavaScript has no compilation step. Instead, an interpreter in the browser reads over the JavaScript code, interprets each line, and runs it. More modern browsers use a technology known as Just-In-Time (JIT) compilation, which compiles JavaScript to executable bytecode just as it is about to run.
+
+// Compile Time
+A runtime environment is where your program will be executed. It determines what global objects your program can access and it can also impact how it runs. This article covers the two JavaScript runtime environments: the runtime environment of a browser (like Chrome, or Firefox) the Node runtime environment.
+
 */
 
 const score = 100;
