@@ -1,6 +1,6 @@
 // Primitive - Call by value
 
-// 7 Types: String, Number, Boolean, null, undefined, Symbol. BigInt
+// 7 Types: String, Number, Boolean, null, undefined, Symbol and BigInt
 
 /*
 Javascript is a Dynamically typed language
