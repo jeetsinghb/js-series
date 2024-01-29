@@ -72,9 +72,9 @@ console.log(gameCounter);
 /*
 Explanation:
 
-Increment ++: Increases variable by 1
+Increment ++: Increases value by 1
 
-Decrement — —: Decreases variable by 1
+Decrement — —: Decreases value by 1
 
 The ++ or — — can be applied before and after the variable. This is where it gets a bit tricky.
 
@@ -83,15 +83,15 @@ Postfix Form: counter++
 
 Prefix Form: ++counter
 
-Although both forms increase the variable by 1, there is a difference. The Postfix Form returns the original value of the variable before the increment/decrement The Prefix Form returns the value after the increment/decrement. This difference can be seen if we are using the returned value of the increment/decrement.
+Although both forms increase the value by 1, there is a difference. The Postfix Form returns the original value of the variable before the increment/decrement The Prefix Form returns the value after the increment/decrement. This difference can be seen if we are using the returned value of the increment/decrement.
 
-Example:
-Prefix
+Examples:
 
+Prefix :-
 let counter = 2;
 alert(++counter); // 3 incremented value has been returned
-Postfix
 
+Postfix :-
 let counter = 2;
 alert(counter++); // 2 Returns the original value before the increment
 
