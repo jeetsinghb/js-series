@@ -53,7 +53,23 @@ not just on the first occurrence.
 Without the g flag, replace would only replace the first occurrence of the pattern in the string.
 */
 
-console.log(url.includes('google'));
-console.log(url.includes('john'));
+console.log(url.includes('google')); // return boolean value
+console.log(url.includes('john')); // return boolean value
 
 console.log(gameName.split('-'));
+
+/*
+The split() method splits a string into an array of substrings.
+The split() method returns the new array.
+The split() method does not change the original string. If (" ") is used as separator, the string is split between words.
+
+Eg 1:
+- console.log(gameName.split('-'));
+- ['hightech', 's', 'com']
+
+Eg 2:
+- console.log(gameName.split());
+- ['hightech-s-com']
+*/
+
+
