@@ -3,18 +3,18 @@ const repoCount = 11;
 
 // console.log(name + repoCount + value);
 
-// String interpolation - back ticks
+// String interpolation - backticks
 console.log(`Hello my name is ${name} and my repo count is ${repoCount}`);
 
 const gameName = new String('hightech-s-com'); // object
 
-console.log(gameName[0]);
-console.log(gameName.__proto__);
+console.log(gameName[0]); // h
+console.log(gameName.__proto__); // return all functions
 
-console.log(gameName.length);
-console.log(gameName.toUpperCase());
-console.log(gameName.charAt(4));
-console.log(gameName.indexOf('g'));
+console.log(gameName.length); // 14
+console.log(gameName.toUpperCase()); // HIGHTECH-S-COM
+console.log(gameName.charAt(4)); // 4
+console.log(gameName.indexOf('g')); // 2
 
 const newString = gameName.substring(0, 7);  // ignores last value / won't include last value
 /*
@@ -27,7 +27,7 @@ console.log(newString);
 const anotherString = gameName.slice(-10, 4)
 /*
 The slice() method returns selected elements in an array, as a new array.
-The slice() method selects from a given start, up to a (not inclusive) given end.
+The slice() method selects from a given start to a (not inclusive) given end.
 The slice() method does not change the original array.
 */
 console.log(anotherString);
@@ -44,8 +44,8 @@ If you want to replace all occurrences of %20 with -, you should use a regular e
 
 console.log(url.replace(/%20/g, '-'));
 
-The /.../ syntax in JavaScript is used to define a regular expression literal.
-It's similar to using single or double quotes for strings but is specifically for regular expressions.
+The /.../ syntax in JavaScript defines a regular expression literal.
+It's similar to single or double quotes for strings but specifically for regular expressions.
 
 In regular expressions, the g flag stands for "global," and when you append it to a regular expression,
 it indicates that the replacement should be applied globally throughout the entire string,
@@ -61,7 +61,7 @@ console.log(gameName.split('-'));
 /*
 The split() method splits a string into an array of substrings.
 The split() method returns the new array.
-The split() method does not change the original string. If (" ") is used as separator, the string is split between words.
+The split() method does not change the original string. If (" ") is used as a separator, the string is split between words.
 
 Eg 1:
 - console.log(gameName.split('-'));
