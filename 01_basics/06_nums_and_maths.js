@@ -19,8 +19,8 @@ console.log(otherNumber.toPrecision(3)); // 33.9
 */
 
 const hundreds = 1000000;
-console.log(hundreds.toLocaleString()); // US based
-console.log(hundreds.toLocaleString('en-IN')); // INR based
+console.log(hundreds.toLocaleString()); // 1,000,000 - US based
+console.log(hundreds.toLocaleString('en-IN')); // 10,00,000 - INR based
 
 /*
 *********** MORE ***********
