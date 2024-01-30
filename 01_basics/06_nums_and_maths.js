@@ -34,9 +34,25 @@ NUMBER.MAX_SAFE_INTEGER
 
 console.log('---------- MATH ----------');
 
-console.log(Math);
+console.log(Math); // returns functions
 
 console.log(Math.abs(-4));
+/*
+ The absolute value gives you the distance of a number from zero,
+ considering only the distance and not the direction (positive or negative).
+ 
+ The Math.abs() function in JavaScript is used to obtain the absolute value of a number.
+ The absolute value represents the distance of a number from zero on the number line,
+ without considering its sign (whether it's positive or negative).
+
+Eg 1:
+- let distance = Math.abs(-10); // distance is 10
+Eg 2:
+- let difference = Math.abs(5 - 12); // difference is 7
+Eg 3:
+- let value = -15;
+- let positiveValue = Math.abs(value); // positiveValue is 15
+*/
 console.log(Math.round(4.5));
 console.log(Math.ceil(6.2));
 console.log(Math.floor(4.9));
