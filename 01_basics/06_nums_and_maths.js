@@ -36,7 +36,7 @@ console.log('---------- MATH ----------');
 
 console.log(Math); // returns functions
 
-console.log(Math.abs(-4));
+console.log(Math.abs(-4)); // 4
 /*
  The absolute value gives you the distance of a number from zero,
  considering only the distance and not the direction (positive or negative).
@@ -53,11 +53,11 @@ Eg 3:
 - let value = -15;
 - let positiveValue = Math.abs(value); // positiveValue is 15
 */
-console.log(Math.round(4.5));
-console.log(Math.ceil(6.2));
-console.log(Math.floor(4.9));
-console.log(Math.min(4, 3, 6, 8));
-console.log(Math.max(4, 3, 6, 8));
+console.log(Math.round(4.5)); // Round of to 5
+console.log(Math.ceil(6.2)); // 7
+console.log(Math.floor(4.9)); // 4
+console.log(Math.min(4, 3, 6, 8)); // 3
+console.log(Math.max(4, 3, 6, 8)); // 8
 
 console.log(Math.random()); // value comes between 1 to 0
 console.log((Math.random()*10) + 1);
