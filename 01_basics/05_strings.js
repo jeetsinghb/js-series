@@ -38,6 +38,20 @@ console.log(newStringOne.trim()); // works for white spaces and new line
 
 const url = "https://google.com/youtube%20website";
 console.log(url.replace('%20', '-'));
+/*
+The replace method in JavaScript only replaces the first occurrence of the specified substring.
+If you want to replace all occurrences of %20 with -, you should use a regular expression with the global (g) flag.
+
+console.log(url.replace(/%20/g, '-'));
+
+The /.../ syntax in JavaScript is used to define a regular expression literal.
+It's similar to using single or double quotes for strings but is specifically for regular expressions.
+
+In regular expressions, the g flag stands for "global," and when you append it to a regular expression,
+it indicates that the replacement should be applied globally throughout the entire string,
+not just on the first occurrence.
+Without the g flag, replace would only replace the first occurrence of the pattern in the string.
+*/
 
 console.log(url.includes('google'));
 console.log(url.includes('john'));
