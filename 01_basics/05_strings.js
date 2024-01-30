@@ -17,6 +17,11 @@ console.log(gameName.charAt(4));
 console.log(gameName.indexOf('g'));
 
 const newString = gameName.substring(0, 7);  // ignores last value / won't include last value
+/*
+The substring() method extracts characters, between two indices (positions), from a string, and returns the substring.
+The substring() method extracts characters from start to end (exclusive).
+The substring() method does not change the original string.
+*/
 console.log(newString);
 
 const anotherString = gameName.slice(-10, 4)
