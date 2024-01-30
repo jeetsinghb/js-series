@@ -25,6 +25,11 @@ The substring() method does not change the original string.
 console.log(newString);
 
 const anotherString = gameName.slice(-10, 4)
+/*
+The slice() method returns selected elements in an array, as a new array.
+The slice() method selects from a given start, up to a (not inclusive) given end.
+The slice() method does not change the original array.
+*/
 console.log(anotherString);
 
 const newStringOne = "     John     ";
