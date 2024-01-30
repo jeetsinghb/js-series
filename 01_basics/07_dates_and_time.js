@@ -2,8 +2,8 @@
 
 // https://tc39.es/proposal-temporal/docs/
 
-// Date : Date is an object in javascript.
-// JavaScript stores dates as number of milliseconds since January 01, 1970
+// Date: Date is an object in javascript.
+// JavaScript stores date as number of milliseconds since January 01, 1970
 
 let myDate = new Date();
 console.log(myDate); // 2024-01-23T00:22:53.693Z
@@ -13,9 +13,9 @@ console.log(myDate.toISOString()); // 2024-01-23T00:22:53.693Z
 console.log(myDate.toJSON()); // 2024-01-23T00:22:53.693Z
 console.log(myDate.toLocaleDateString()); // 1/23/2024
 console.log(myDate.toLocaleString()); // 1/23/2024, 12:22:53 AM
-console.log(myDate.toUTCString()); // eg: Tue, 23 Jan 2024 01:14:36 GMT
+console.log(myDate.toUTCString()); // Tue, 23 Jan 2024 01:14:36 GMT
 
-console.log(typeof myDate);
+console.log(typeof myDate); // object
 
 console.log("----------");
 
