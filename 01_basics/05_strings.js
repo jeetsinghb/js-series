@@ -13,7 +13,7 @@ console.log(gameName.__proto__); // return all functions
 
 console.log(gameName.length); // 14
 console.log(gameName.toUpperCase()); // HIGHTECH-S-COM
-console.log(gameName.charAt(4)); // 4
+console.log(gameName.charAt(4)); // t
 console.log(gameName.indexOf('g')); // 2
 
 const newString = gameName.substring(0, 7);  // ignores last value / won't include last value
