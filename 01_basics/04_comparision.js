@@ -1,10 +1,10 @@
-// console.log(2 > 1);
-// console.log(2 >= 1);
-// console.log(2 < 1);
-// console.log(2 == 1);
-// console.log(2 != 1);
+// console.log(2 > 1); // true
+// console.log(2 >= 1); // true
+// console.log(2 < 1); // false
+// console.log(2 == 1); // false
+// console.log(2 != 1); // true
 
-
+// Type Coercion
 // console.log("2" > 1); // true
 // console.log("02" > 1); // true
 
@@ -13,7 +13,7 @@ Explanation:
 
 In JavaScript, the comparison operators (>, <, >=, <=) perform automatic type coercion if the operands are of different types. When comparing a string and a number using these operators, the string is implicitly converted to a number before the comparison takes place.
 
-If one of the operands is a string and the other is a number, JavaScript will attempt to convert the string to a number before making the comparison.
+If one of the operands is a string and the other is a number, JavaScript will attempt to convert the string to a number before comparing.
 
 console.log("2" > 1);   // true, because "2" is converted to the number 2
 console.log("02" > 1);  // true, because "02" is converted to the number 2
@@ -27,7 +27,7 @@ console.log("apple" > 1);  // false, because "apple" cannot be converted to a nu
 // That's why null >= 0 is true and null > 0 is false.
 
 console.log(null > 0); // false
-// In this case, when comparing null to 0 using the greater than (>), JavaScript performs type coercion. null is treated as 0 in numeric comparisons, so effectively, it is like comparing 0 > 0, which is false.
+// In this case, JavaScript performs type coercion when comparing null to 0 using the greater than (>). null is treated as 0 in numeric comparisons, so effectively, it is like comparing 0 > 0, which is false.
 console.log(null == 0); // false
 // The == operator performs type coercion if the operands are of different types. However, there is a special rule for null and undefined equality comparisons. According to the equality comparison algorithm, if one operand is null and the other is 0, the result is false.
 console.log(null >= 0); // true
