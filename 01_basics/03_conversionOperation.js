@@ -5,8 +5,8 @@ const score = undefined; // null, undefined, boolean, string
 
 let valueInNumber = Number(score)
 
-// console.log(typeof valueInNumber)
-// console.log(valueInNumber)
+// console.log(typeof valueInNumber) // Number
+// console.log(valueInNumber) // NaN
 
 // "33" => 33
 // "33abc" => NaN
@@ -17,7 +17,7 @@ let valueInNumber = Number(score)
 let isLoggedIn = "Tarjeet"
 
 let booleanIsLoggedIn = Boolean(isLoggedIn)
-// console.log(booleanIsLoggedIn)
+// console.log(booleanIsLoggedIn) // true
 
 // 1 => true; 0 = false
 // "" => false
@@ -26,8 +26,8 @@ let booleanIsLoggedIn = Boolean(isLoggedIn)
 let someNumber = 33
 
 let stringNumber = String(someNumber)
-// console.log(stringNumber);
-// console.log(typeof stringNumber);
+// console.log(stringNumber); // 33
+// console.log(typeof stringNumber); // string
 
 // ******************** Operations ********************
 
@@ -46,18 +46,18 @@ let str1 = "Hello"
 let str2 = " Tarjeet"
 
 let str3 = str1 + str2
-// console.log(str3);
+// console.log(str3); // Heloo Tarjeet
 
 // console.log("1" + 2); // string; 12
 // console.log(1 + "2"); // string; 12
-// console.log("1" + 2 + 2); // string; 12
+// console.log("1" + 2 + 2); // string; 122
 // console.log(1 + 2 + "2"); // string; 32
 
-// console.log( (3 + 4) * 5 % 3);
+// console.log( (3 + 4) * 5 % 3); // 35 % 3 -> 2
 
 // Operator precedence
-// console.log(+true);
-// console.log(+"");
+// console.log(+true); // 1
+// console.log(+""); // 0
 
 // num1 = num2 = num3 = 2 + 2
 // console.table([num1, num2, num3])
@@ -87,11 +87,11 @@ Although both forms increase the value by 1, there is a difference. The Postfix 
 
 Examples:
 
-Prefix :-
+Prefix:-
 let counter = 2;
 alert(++counter); // 3 incremented value has been returned
 
-Postfix :-
+Postfix:-
 let counter = 2;
 alert(counter++); // 2 Returns the original value before the increment
 
