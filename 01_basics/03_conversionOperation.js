@@ -23,6 +23,21 @@ let booleanIsLoggedIn = Boolean(isLoggedIn)
 // "" => false
 // "John" => true
 
+/*
+
+In JavaScript, when you use the Boolean() function, it converts a value to a Boolean.
+The rule is that only a few specific values will result in false when converted to Boolean, and all other values will result in true.
+Specifically, the following values will be converted to false:
+
+false
+0 (zero)
+null
+undefined
+NaN (not a number)
+An empty string ('' or "")
+Any other value, including negative numbers like -20, will be converted to true.
+*/
+
 let someNumber = 33
 
 let stringNumber = String(someNumber)
