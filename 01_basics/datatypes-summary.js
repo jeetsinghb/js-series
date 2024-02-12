@@ -29,8 +29,17 @@ const anotherId = Symbol('123');
 
 console.log(id === anotherId); // false
 
-const bigNumber = 6456546549651465456n
+const bigIntValue = 1234567890123456789012345678901234567890n;
 
+/*
+To denote a literal as a BigInt, you can append the letter n to the end of an integer literal.
+This tells JavaScript that you want to create a BigInt instead of a regular Number.
+
+In this example, 1234567890123456789012345678901234567890n is a BigInt literal.
+
+Using the n suffix is a way to explicitly tell JavaScript that you want to work with a BigInt value rather than a regular Number.
+If you omit the n, JavaScript will treat the number as a regular Number and might lose precision for very large integers.
+*/
 
 
 // Non-Primitive / Reference Type - Call by reference
