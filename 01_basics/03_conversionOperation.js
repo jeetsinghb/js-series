@@ -61,7 +61,7 @@ let str1 = "Hello"
 let str2 = " Tarjeet"
 
 let str3 = str1 + str2
-// console.log(str3); // Heloo Tarjeet
+// console.log(str3); // Hello Tarjeet
 
 // console.log("1" + 2); // string; 12
 // console.log(1 + "2"); // string; 12
@@ -73,6 +73,7 @@ let str3 = str1 + str2
 // Operator precedence
 // console.log(true); // true
 // console.log(+true); // 1
+// console.log(true+); // throws error
 // console.log(+""); // 0
 
 // num1 = num2 = num3 = 2 + 2
