@@ -71,6 +71,7 @@ let str3 = str1 + str2
 // console.log( (3 + 4) * 5 % 3); // 35 % 3 -> 2
 
 // Operator precedence
+// console.log(true); // true
 // console.log(+true); // 1
 // console.log(+""); // 0
 
