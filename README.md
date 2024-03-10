@@ -1,5 +1,5 @@
 # js-series
-A code repo for javascript series at Chai aur Code YT Channel
+A code repo for the javascript series from Chai aur Code YT Channel, plus self-learning.
 
 
 # References
