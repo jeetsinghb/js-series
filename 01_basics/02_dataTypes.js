@@ -8,6 +8,12 @@ let name = "Tarjeet"; // string value
 let age = 26; // number value
 let isLoggedIn = true; // boolean value
 
+/*
+In JavaScript, when converting a non-boolean value to a boolean using the Boolean() function, the result is true for any non-zero numeric value and false for zero or NaN (Not a Number).
+
+So, when you convert 3 to a boolean using Boolean(3), the result will be true. Similarly, any non-zero value will result in true. This behavior is consistent with JavaScript's truthy and falsy values.
+*/
+
 
 // Primitive Data Types
 
