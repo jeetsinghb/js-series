@@ -57,6 +57,36 @@ let stringNumber = String(someNumber)
 // console.log(stringNumber); // 33
 // console.log(typeof stringNumber); // string
 
+/* MORE */
+
+let val = [];
+// OR
+let val = {};
+
+let r = String(val);
+
+console.log(r);
+console.log(typeof r);
+
+/*
+ARRAY:
+When you convert an empty array to a string using String(), it results in an empty string ("").
+This is because an empty array does not contain any elements, so its string representation is simply an empty string.
+
+Furthermore:
+
+When you use the String() function in JavaScript to convert an object to a string, JavaScript looks at how it can represent that object as a string. For most objects, including empty ones like {}, JavaScript uses a default representation which looks like "[object Object]".
+
+This representation tells you that the variable you're converting is an object, but it doesn't give any specific information about its contents because it's just an empty object.
+
+So, when you try to convert an empty object {} to a string using String(), JavaScript doesn't see any specific data inside the object to represent, so it just provides this generic string indicating that it's an object.
+
+On the other hand, when you convert an empty array [] to a string using String(), an array is also an object in JavaScript. But unlike regular objects, arrays have a specific behavior when converted to a string. An empty array doesn't have any elements, so JavaScript represents it as an empty string "".
+
+In essence, JavaScript has specific rules for how it represents different types of data as strings, and for empty objects, it uses the generic "[object Object]" representation.
+
+*/
+
 // ******************** Operations ********************
 
 let value = 3
