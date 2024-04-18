@@ -8,6 +8,7 @@ let valueInNumber = Number(score)
 // console.log(typeof valueInNumber) // Number
 // console.log(valueInNumber) // NaN
 
+// "" => 0 // This is because JavaScript attempts to convert the string to a number, and since there are no numerical characters in the string, it evaluates to zero.
 // "33" => 33
 // "33abc" => NaN
 // true => 1; false => 0
