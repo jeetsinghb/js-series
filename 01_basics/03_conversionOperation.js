@@ -29,6 +29,12 @@ let booleanIsLoggedIn = Boolean(isLoggedIn)
 Therefore, when converted to a boolean, it results in false.
 */
 // "John" => true
+// {} => true
+// [] => true
+/*
+Both an empty array ([]) and an empty object ({}) are considered truthy values in JavaScript.
+Therefore, when converted to a boolean, they both result in true. Only certain values such as false, null, undefined, 0, NaN, and an empty string "" would evaluate to false when converted to a boolean.
+*/
 
 /*
 
