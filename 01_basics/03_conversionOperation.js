@@ -8,7 +8,8 @@ let valueInNumber = Number(score)
 // console.log(typeof valueInNumber) // Number
 // console.log(valueInNumber) // NaN
 
-// "" => 0 // This is because JavaScript attempts to convert the string to a number, and since there are no numerical characters in the string, it evaluates to zero.
+// "" => 0
+// This is because JavaScript attempts to convert the string to a number, and since there are no numerical characters in the string, it evaluates to zero.
 // "33" => 33
 // "33abc" => NaN
 // true => 1; false => 0
@@ -24,6 +25,9 @@ let booleanIsLoggedIn = Boolean(isLoggedIn)
 // "" => false
 // "1" => true
 // "0" true
+/* null itself does not represent a numeric value, and it is not equivalent to 0. Instead, it is simply a value that represents the absence of a value.
+Therefore, when converted to a boolean, it results in false.
+*/
 // "John" => true
 
 /*
