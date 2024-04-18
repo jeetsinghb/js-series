@@ -22,6 +22,8 @@ let booleanIsLoggedIn = Boolean(isLoggedIn)
 
 // 1 => true; 0 = false
 // "" => false
+// "1" => true
+// "0" true
 // "John" => true
 
 /*
