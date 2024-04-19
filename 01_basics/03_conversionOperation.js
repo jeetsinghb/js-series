@@ -15,6 +15,17 @@ let valueInNumber = Number(score)
 // true => 1; false => 0
 // null => 0
 // undefined => NaN
+// [] => 0
+/* In JavaScript, when you try to convert an empty array [] to a number using the Number() function, it results in 0.
+This behavior occurs because JavaScript attempts to convert the array to a primitive number, and an empty array doesn't contain any numerical information, so it's coerced to 0.
+*/
+// {} => 0
+/*
+When you try to convert an object to a number using the Number() function in JavaScript, the result is NaN (Not a Number).
+This happens because objects cannot be directly converted to numbers.
+
+JavaScript doesn't know how to interpret an empty object as a number, so it returns NaN. This behavior is consistent with how JavaScript handles attempts to convert non-numeric values to numbers.
+*/
 
 let isLoggedIn = "Tarjeet"
 
