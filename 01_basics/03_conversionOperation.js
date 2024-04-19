@@ -15,7 +15,7 @@ let valueInNumber = Number(score)
 // true => 1; false => 0
 // null => 0
 // undefined => NaN
-// [] => 0
+// [] => NaN
 /* In JavaScript, when you try to convert an empty array [] to a number using the Number() function, it results in 0.
 This behavior occurs because JavaScript attempts to convert the array to a primitive number, and an empty array doesn't contain any numerical information, so it's coerced to 0.
 */
