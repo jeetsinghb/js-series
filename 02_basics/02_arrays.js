@@ -50,6 +50,9 @@ In summary, the flat() method is used to flatten arrays in JavaScript, creating 
 
 */
 
+
+// isArray methods
+
 console.log(Array.isArray("Hitesh")); // false - Boolean
 
 console.log(Array.from("Hitesh")); // [ 'H', 'i', 't', 'e', 's', 'h' ]
