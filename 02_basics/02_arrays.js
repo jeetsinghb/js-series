@@ -46,7 +46,7 @@ MDN: The flat() method of Array instances creates a new array with all sub-array
 
 5. up to the specified depth: This part refers to the optional parameter you can pass to flat(). This parameter specifies how deep the flattening should go. For example, if you have an array with nested arrays, and you specify a depth of 1, it will only flatten the top-level nested arrays, leaving any deeper nested arrays untouched.
 
-n summary, the flat() method is used to flatten arrays in JavaScript, creating a new one-dimensional array by concatenating all elements of nested arrays recursively up to a specified depth.
+In summary, the flat() method is used to flatten arrays in JavaScript, creating a new one-dimensional array by concatenating all elements of nested arrays recursively up to a specified depth.
 
 */
 
