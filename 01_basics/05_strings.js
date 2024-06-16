@@ -34,6 +34,10 @@ The slice() method does not change the original array.
 */
 console.log(anotherString);
 
+/* MORE ABOUT substring() and slice() */
+
+// https://snipboard.io/mi86UH.jpg
+
 const newStringOne = "     John     ";
 console.log(newStringOne);
 console.log(newStringOne.trim()); // works for white spaces and new line
@@ -74,10 +78,6 @@ Eg 2:
 - ['hightech-s-com']
 */
 
-
-
-
-/********** ADDTIONAL STRING METHODS **********/
 
 
 
