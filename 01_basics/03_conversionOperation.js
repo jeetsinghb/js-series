@@ -20,7 +20,7 @@ let valueInNumber = Number(score)
 When you attempt to convert an array to a number using Number(), JavaScript internally tries to convert the array to a string first and then converts the string to a number.
 Since the array is empty, when converted to a string it becomes an empty string, which is then converted to the number 0.
 */
-// {} => 0
+// {} => NaN
 /*
 When you try to convert an object to a number using the Number() function in JavaScript, the result is NaN (Not a Number).
 This happens because objects cannot be directly converted to numbers.
