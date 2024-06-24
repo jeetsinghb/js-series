@@ -63,3 +63,40 @@ console.log(Object.values(tinderUser));
 console.log(Object.entries(tinderUser));
 
 console.log(tinderUser.hasOwnProperty('isLoggedIn')); // Determines whether an object has a property with the specified name.
+
+console.log('----------');
+
+
+// Object destructuring
+
+const courses = {
+    coursename: "Javascript",
+    courseinstructor: "Hitesh",
+    price: "999"
+}
+
+// console.log(courses.coursename);
+// console.log(courses["coursename"]);
+
+
+// destruct
+
+const {courseinstructor: instructor} = courses;
+
+// console.log(courseinstructor);
+console.log(instructor);
+
+
+// API
+// JSON
+
+/*
+
+{
+    "name": "Hitesh",
+    "coursename": "Javascript",
+    "price": "free"
+}
+
+*/
+
