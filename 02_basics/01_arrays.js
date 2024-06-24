@@ -57,19 +57,19 @@ console.log("***************");
 
 // Slice and Splice
 
-console.log("A", myArr);
+console.log("A", myArr); // A [ 0, 1, 2, 3, 4, 5 ]
 
 const myNewArray1 = myArr.slice(1, 3); // index 3 won't be included
 // Returns a copy of a section of an array.
 
-console.log(myNewArray1);
-console.log("B", myArr);
+console.log(myNewArray1); // [ 1, 2 ]
+console.log("B", myArr); // B [ 0, 1, 2, 3, 4, 5 ]
 
 const myNewArray2 = myArr.splice(1, 3)
 // Removes elements from an array and, if necessary, inserts new elements in their place, returning the deleted elements.
 
-console.log("C", myArr);
-console.log(myNewArray2);
+console.log("C", myArr); // C [ 0, 4, 5 ]
+console.log(myNewArray2); // [ 1, 2, 3 ]
 
 
 
