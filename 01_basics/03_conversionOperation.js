@@ -168,3 +168,51 @@ let counter = 2;
 alert(counter++); // 2 Returns the original value before the increment
 
 */
+
+/*
+
+MORE:
+
+// POSTFIX
+
+In JavaScript, the postfix increment operator (x++) first returns the current value of x and then increments x by 1. Let's break down what happens step by step in your code:
+
+let x = 5;
+let y = x++;
+
+console.log(x); // Output: 6
+console.log(y); // Output: 5
+
+1. Initialization: x is initialized to 5.
+2. Assignment to y: The expression y = x++ assigns the current value of x to y and then increments x by 1.
+- At this point, y gets the value 5 because x++ returns the value of x before it was incremented.
+3. Increment: After the assignment to y, x is incremented to 6.
+4. Logging:
+- console.log(x); prints 6, because x has been incremented after the assignment to y.
+- console.log(y); prints 5, because y was assigned the value of x before it was incremented.
+Therefore, even though x is incremented to 6 eventually, y retains the original value of 5 because the postfix increment operator (x++) affects x after its current value is used in the assignment to y.
+
+// PREFIX
+
+let x = 5;
+let y = ++x;
+
+console.log(x); // Output: 6
+console.log(y); // Output: 6
+
+1. Initialization: x is initialized to 5.
+2. Assignment to y: The expression y = ++x increments x by 1 and then assigns the incremented value to y.
+- When ++x is used, x is incremented by 1 before its value is used in any other operation. So, y gets the value 6 because ++x returns the incremented value of x.
+3. Increment: After the assignment to y, x is incremented to 6.
+4. Logging:
+- console.log(x); prints 6, because x has been incremented by the prefix ++ operator.
+- console.log(y); prints 6, because y was assigned the value of x after it was incremented.
+
+In summary, the key difference between prefix (++x) and postfix (x++) increment operators lies in when the incrementation occurs relative to the assignment:
+
+- Prefix (++x): Increments x first and then returns the incremented value. Therefore, y receives the incremented value of x.
+- Postfix (x++): Returns the current value of x and then increments x. Therefore, y receives the current value of x before it was incremented.
+
+This distinction is important depending on whether you want to use the value of x before or after it's incremented in your code.
+
+*/
