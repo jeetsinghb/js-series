@@ -98,5 +98,13 @@ console.log(instructor);
     "price": "free"
 }
 
+// sometimes
+
+[
+    {},
+    {},
+    {}
+]
+
 */
 
