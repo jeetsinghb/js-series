@@ -1,4 +1,6 @@
 
+console.log("----- FUNCTIONS PART 1 -----");
+
 // function defination
 
 function log() {
@@ -69,3 +71,44 @@ function defaultValue(username = "Robin") { // default value
 
 console.log(defaultValue()); // Robin
 console.log(defaultValue('Sam')); // Sam
+
+
+console.log("----- FUNCTIONS PART 2 -----");
+
+
+function calculateCartPrice(val1, val2, ...num1) { // rest / spread operator
+    return num1;
+}
+
+console.log(calculateCartPrice(200, 400, 600, 1000)); // [600, 1000] 
+
+
+const user = {
+    username: "John Doe",
+    price: 999
+}
+
+function handleObject(anyObject) {
+    console.log(`Username is ${anyObject.username} and the price is ${anyObject.price}`);
+}
+
+// handleObject(user);
+handleObject({
+    username: "Sam",
+    price: 2999
+})
+
+
+
+const myNewArray = [100, 200, 300, 400, 500];
+
+function returnNewArray(arrayValue) {
+    return arrayValue[1];
+}
+
+// console.log(returnNewArray(myNewArray));
+console.log(returnNewArray([100, 200, 300, 400, 500]));
+
+
+
+
