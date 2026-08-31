@@ -102,6 +102,13 @@ so top-level does not always mean global.
 
 ----------------------------------------
 
+# Important Related Concepts
+----------------------------------------
+
+Lexical Scope: JavaScript resolves variable names hierarchically. An inner function always has lexical access to the variables of its parent/outer scope, but the parent cannot look inside the child scope.
+
+Scope Chain: If the JavaScript engine cannot find a variable inside the current block or function, it steps outward to the parent scope, continuing all the way up to the global scope until it finds it or throws an error.
+
 4. Lexical Scope
 ----------------------------------------
 
@@ -185,6 +192,8 @@ user.name = "Mike"; // Allowed
 
 user = {}; // Not allowed
 */
+
+// READ MORE: https://www.geeksforgeeks.org/javascript/javascript-scope/
 
 
 /*
