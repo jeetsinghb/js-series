@@ -4,186 +4,184 @@ var accountPassword = "123JD78";
 accountCity = "New York";
 let accountState;
 
-// accountId = 1556; // Not allowed - Cannot re-declare value to a const variable
+// accountId = 1556; // TypeError: Assignment to constant variable.
+
+// const accountId = 1556; // SyntaxError: Identifier 'accountId' has already been declared
+
+/*
+
+So remember:
+
+Reassignment → changing the value
+Redeclaration → declaring the variable again
+
+*/
 
 console.log(accountId);
 
 /*
 Prefer not to use var
-because of issues in block scope and functional scope
+because of issues in block scope and function scope
 */
 
 console.table([accountId, accountEmail, accountPassword, accountCity, accountState]);
 
-// Extras
-
 /*
+========================================
+JAVASCRIPT SCOPE
+========================================
 
-In JavaScript, variable scope refers to where a variable is accessible within your code and for how long it retains its value. Here's a summary of variable scope in JavaScript:
+1. var
+----------------------------------------
 
-1. Global Scope:
-- Variables declared outside of any function or block have global scope.
-- They are accessible from anywhere in your code, including inside functions.
-- Global variables are accessible by any script or function on the page, which can lead to potential conflicts or unintended consequences if not managed carefully.
+var is function-scoped, NOT block-scoped.
 
-EXAMPLE:
-
-var globalVariable = 10;
-
-function myFunction() {
-    console.log(globalVariable); // Accessible
-}
-
-2. Function Scope:
-- Variables declared within a function have function scope.
-- They are only accessible within the function in which they are defined.
-- Variables declared with var keyword are function-scoped.
-
-EXAMPLE:
-
-function myFunction() {
-    var localVar = 20;
-    console.log(localVar); // Accessible
-}
-
-console.log(localVar); // Error: localVar is not defined
-
-3. Block Scope (with let and const):
-- Introduced in ECMAScript 6 (ES6).
-- Variables declared with let or const are block-scoped, meaning they are only accessible within the block in which they are defined.
-- Blocks include if statements, loops, and any code wrapped in curly braces {}.
-
-EXAMPLE:
+Example:
 
 if (true) {
-    let blockVar = 30;
-    console.log(blockVar); // Accessible
+    var x = 10;
 }
 
-console.log(blockVar); // Error: blockVar is not defined
+console.log(x); // 10
 
-4. Lexical Scope:
-- Lexical scope means that the scope of a variable is determined by its position within the code.
-- Inner functions have access to variables declared in their outer scope.
-- This forms a chain of scopes called the "scope chain".
+The 'if' block does not create a separate scope for 'var'.
 
-function outerFunction() {
-    var outerVar = 40;
+If 'var' is declared inside a function, it is scoped
+to that function:
 
-    function innerFunction() {
-        console.log(outerVar); // Accessible
-    }
-
-    innerFunction();
-}
-
-outerFunction();
-
-
-// FURTHERMORE
-
- What is the output for Block scope used via the var keyword?
-
- When var is used for variable declaration within a block in JavaScript, it doesn't strictly adhere to block scope like let or const. Instead, it has a behavior called "hoisting" and is scoped to the nearest function, not the block itself. Let's look at an example to understand this behavior:
-
- EXAMPLE:
-
- if (true) {
-    var blockVar = 30;
-    console.log(blockVar); // Output: 30
-}
-
-console.log(blockVar); // Output: 30
-
-
-In this example, despite blockVar being declared within the if block, it is accessible outside of the block. This behavior is because variables declared with var are function-scoped or globally scoped, not block-scoped.
-
-Here's what happens behind the scenes:
-
-1. Variable declaration with var is hoisted to the top of the nearest enclosing function or global scope.
-2. Even though blockVar is declared within the if block, it's effectively treated as if it were declared at the top of the function containing the if block.
-3. Therefore, blockVar is accessible both inside and outside of the if block.
-
-This behavior can sometimes lead to confusion and unintended consequences, especially if you expect block-scoping behavior similar to let or const. That's why, in modern JavaScript, it's generally recommended to use let or const for block-scoped variables to avoid such issues and to write more predictable and maintainable code.
-
-
-What is the output for let and const in the function scope?
-
-In JavaScript, let and const declarations behave differently from var declarations, particularly regarding their scope within functions.
-
-1. let in Function Scope:
-
-- When you declare a variable with let inside a function, it is block-scoped to that function.
-- This means the variable is accessible only within the function in which it's defined and not outside of it.
-- Each invocation of the function creates a new instance of the variable, scoped to that function call.
-
-EXAMPLE:
-
-function myFunction() {
+function test() {
     if (true) {
-        let localVar = 20;
-        console.log(localVar); // Accessible
+        var x = 10;
     }
-    console.log(localVar); // Error: localVar is not defined
+
+    console.log(x); // 10
 }
 
-In this example, localVar is only accessible within the if block and not outside of it, thanks to let providing block scope.
+test();
 
-2. const in Function Scope:
+But x is not accessible outside the function.
 
-- Similarly to let, when you declare a variable with const inside a function, it is block-scoped to that function.
-- The difference with const is that it creates a constant whose value cannot be reassigned.
-- Like let, each invocation of the function creates a new instance of the constant, scoped to that function call.
+----------------------------------------
 
-EXAMPLE:
+2. let and const
+----------------------------------------
 
-function myFunction() {
-    const PI = 3.14;
-    console.log(PI); // Accessible
+let and const are block-scoped.
 
-    // This would cause an error because you can't reassign a const
-    // PI = 3.14159; // Error: Assignment to constant variable
+Example:
+
+if (true) {
+    let x = 10;
+    const y = 20;
 }
 
-In this example, PI is accessible within the function, but any attempt to reassign its value would result in an error.
+console.log(x); // ReferenceError
+console.log(y); // ReferenceError
 
-In summary, let and const declarations within a function provide block scope, ensuring that variables are only accessible within the block in which they are defined, enhancing code clarity and predictability.
+Blocks include:
 
+if (...) { }
+for (...) { }
+while (...) { }
+{ }
 
-Is it the same as var??
+A function body is also a block.
 
-In terms of function scope, the behavior of let and const is not the same as var in JavaScript.
+----------------------------------------
 
-While var is function-scoped, meaning variables declared with var are accessible throughout the entire function in which they are defined, let and const are block-scoped, meaning they are only accessible within the block in which they are defined, including within functions.
+3. Global / Top-Level Scope
+----------------------------------------
 
-Here's a summary of the differences:
+Code written at the top level is in the top-level scope.
 
-1. var in Function Scope:
-- Variables declared with var are function-scoped.
-- They are accessible throughout the entire function in which they are defined, regardless of the block in which they are declared.
+In a traditional browser script, top-level declarations
+can be associated with the global environment.
 
- EXAMPLE:
+However, JavaScript modules have their own top-level scope,
+so top-level does not always mean global.
 
- function myFunction() {
-    if (true) {
-        var localVar = 20;
+----------------------------------------
+
+4. Lexical Scope
+----------------------------------------
+
+Lexical scope means scope is determined by where code
+is written.
+
+Example:
+
+function outer() {
+    let x = 10;
+
+    function inner() {
+        console.log(x); // 10
     }
-    console.log(localVar); // Accessible: localVar is hoisted to the function scope
+
+    inner();
 }
 
-2. let and const in Function Scope:
-- Variables declared with let or const are block-scoped.
-- They are only accessible within the block in which they are defined, including within functions.
+inner() can access x because x is in its outer lexical scope.
 
-EXAMPLE:
+----------------------------------------
 
-function myFunction() {
-    if (true) {
-        let localVar = 20;
-    }
-    console.log(localVar); // Error: localVar is not defined
-}
+5. Hoisting
+----------------------------------------
 
-So, while var variables are function-scoped, let and const variables are block-scoped, providing finer control over variable visibility and reducing the likelihood of unintended side effects.
+Hoisting is separate from scope.
 
+'var' declarations are hoisted and initialized with
+'undefined'.
+
+Example:
+
+console.log(x); // undefined
+var x = 10;
+
+Conceptually:
+
+var x;
+console.log(x);
+x = 10;
+
+Do NOT think that hoisting is why var escapes an if block.
+
+'var' escapes the block because `var` is not block-scoped.
+
+----------------------------------------
+
+6. let/const and the Temporal Dead Zone
+----------------------------------------
+
+let and const declarations are also processed before
+execution, but they cannot be accessed before their
+declaration is reached.
+
+Example:
+
+console.log(x); // ReferenceError
+let x = 10;
+
+The period before the declaration is reached is called
+the Temporal Dead Zone (TDZ).
+
+----------------------------------------
+
+7. const
+----------------------------------------
+
+const prevents reassignment of the variable.
+
+const x = 10;
+
+x = 20; // TypeError
+
+But const does NOT make objects or arrays immutable.
+
+const user = {
+    name: "John"
+};
+
+user.name = "Mike"; // Allowed
+
+user = {}; // Not allowed
 */
