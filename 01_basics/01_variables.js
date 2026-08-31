@@ -185,3 +185,20 @@ user.name = "Mike"; // Allowed
 
 user = {}; // Not allowed
 */
+
+
+/*
+
+Keyword	   Scope	   Reassign?
+var	       Function	   ✅ Yes
+let	       Block	   ✅ Yes
+const	   Block	   ❌ No
+
+Scope = Where can I access this variable?
+
+Hoisting = What happens to the declaration before execution?
+
+*/
+
+
+
