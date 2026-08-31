@@ -193,8 +193,6 @@ user.name = "Mike"; // Allowed
 user = {}; // Not allowed
 */
 
-// READ MORE: https://www.geeksforgeeks.org/javascript/javascript-scope/
-
 
 /*
 
@@ -210,4 +208,12 @@ Hoisting = What happens to the declaration before execution?
 */
 
 
+/*
 
+REFERENCES:
+
+https://www.geeksforgeeks.org/javascript/javascript-scope/
+
+https://www.geeksforgeeks.org/javascript/javascript-hoisting/
+
+*/
