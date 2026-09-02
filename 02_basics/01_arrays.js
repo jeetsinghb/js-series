@@ -1,155 +1,271 @@
-// Arrays
-
 // Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 
 /*
 
-- Array is an object.
+ARRAYS
+======
 
-- An array can store multiple elements or values of different data types
-  in a single variable.
+- An array is an object.
 
-- JavaScript arrays are zero-indexed:
-  -- The first element is at index 0.
-  -- The second element is at index 1.
-  -- The last element is at index array.length - 1.
+- An array can store multiple values of different data types in a single variable.
 
-- Array elements are normally accessed using numeric indexes.
+Example:
 
-  Example:
-  -- array[0]    // Correct
-  -- array["0"]  // Also works because array indexes are property keys
-
-- String properties that are not valid array indexes do not access
-  array elements.
-
-  Example:
-  -- array["name"] // Accesses a property called "name", not an array element.
+const arr = [10, "Hello", true, null];
 
 
-* JavaScript Array Copy Operations:
+ARRAY INDEXING
+==============
 
-1) Shallow Copy:
-- Creates a new outer array/object.
-- Nested objects/arrays still share the same references.
-- Changing a nested object/array through one copy can affect the other.
-- The important concept here is shared references.
+- JavaScript arrays are zero-indexed.
+
+-- First element  → index 0
+-- Second element → index 1
+-- Third element  → index 2
+-- Last element   → index array.length - 1
+
+Example:
+
+const fruits = ["Apple", "Banana", "Mango"];
+
+fruits[0]; // "Apple"
+fruits[1]; // "Banana"
+fruits[2]; // "Mango"
+
+
+- Array indexes are numeric property keys.
+
+- A string representation of a valid index also works.
+
+Example:
+
+fruits[0];    // "Apple"
+fruits["0"];  // "Apple"
+
+
+- A non-index string accesses a property, not an array element.
+
+Example:
+
+fruits["name"]; // undefined
+
+We can add a property called "name":
+
+fruits.name = "My Fruits";
+
+fruits["name"]; // "My Fruits"
+fruits.name;    // "My Fruits"
+
+IMPORTANT:
+"name" is a property, not an array index.
+
+
+ARRAY COPY OPERATIONS
+=====================
+
+1) SHALLOW COPY
+---------------
+
+- Creates a new array.
+- If the array contains objects or arrays, those nested values are still shared.
+- Changing nested data can affect the original.
 
 Example:
 
 const original = [{ name: "Batman" }];
+
 const copy = [...original];
 
 copy[0].name = "Superman";
 
-console.log(original[0].name);
-// "Superman"
+console.log(original);
+// [{ name: "Superman" }]
 
-Both arrays contain a reference to the same nested object.
+console.log(copy);
+// [{ name: "Superman" }]
+
+Why?
+
+The arrays are different, but the object inside them is shared.
 
 
-2) Deep Copy:
-- Creates a new array/object and also copies nested objects/arrays.
-- Nested objects/arrays do not share the same references.
-- Changes to one copy do not affect the other.
+2) DEEP COPY
+------------
+
+- Creates a new array.
+- Nested objects/arrays are also copied.
+- Changes to nested data in the copy don't affect the original.
+- structuredClone() can be used to create a deep copy.
 
 Example:
 
 const original = [{ name: "Batman" }];
+
 const copy = structuredClone(original);
 
 copy[0].name = "Superman";
 
-console.log(original[0].name);
-// "Batman"
+console.log(original);
+// [{ name: "Batman" }]
 
-The nested object is also copied.
+console.log(copy);
+// [{ name: "Superman" }]
 
-NOTE:
-- Do not simply think:
-  "Primitive = Stack" and "Non-Primitive = Heap"
-  when learning shallow vs deep copy.
-- Shallow vs deep copy is mainly about whether references
-  to nested objects/arrays are shared.
 
-*/
+IMPORTANT:
 
-const myArr = [0, 1, 2, 3, 4, 5]; // Array with some elements
+[...original]
+→ Shallow copy
+
+structuredClone(original)
+→ Deep copy
+
+For simple arrays containing only primitive values,
+[...original] is usually enough.
+
+
+ARRAY METHODS
+=============
+
+const myArr = [0, 1, 2, 3, 4, 5];
+
 const heroes = ["Batman", "Superman"];
 
-const myArr2 = new Array(1, 2, 3, 4); // Creates an array using the Array constructor
+const myArr2 = new Array(1, 2, 3, 4);
 
-console.log(myArr[0]); // 0
-
-
-// Array Methods
-
-myArr.push(6); // Adds an element to the end of the array
-myArr.push(7); // Adds another element to the end of the array
-
-myArr.pop(); // Removes the last element from the array
-
-myArr.unshift(8); // Adds an element to the beginning of the array
-myArr.shift(); // Removes the first element from the array
+console.log(myArr[0]);
+// 0
 
 
-console.log(myArr.includes(9)); // false
-console.log(myArr.indexOf(9)); // -1
+push()
+======
+
+- Adds an element to the end of the array.
+- Returns the new length of the array.
+
+Example:
+
+myArr.push(6);
+myArr.push(7);
 
 
-// join()
+pop()
+======
+
+- Removes the last element from the array.
+- Returns the removed element.
+
+Example:
+
+myArr.pop();
+
+
+unshift()
+=========
+
+- Adds an element to the beginning of the array.
+- Returns the new length of the array.
+
+Example:
+
+myArr.unshift(8);
+
+
+shift()
+========
+
+- Removes the first element from the array.
+- Returns the removed element.
+
+Example:
+
+myArr.shift();
+
+
+includes()
+==========
+
+- Checks whether an array contains a specific value.
+- Returns true or false.
+
+Example:
+
+console.log(myArr.includes(9));
+// false
+
+
+indexOf()
+=========
+
+- Returns the index of the first occurrence of a value.
+- Returns -1 if the value is not found.
+
+Example:
+
+console.log(myArr.indexOf(9));
+// -1
+
+
+join()
+======
+
+- Converts all elements of an array into a string.
+- Uses a comma as the default separator.
+- You can provide your own separator.
+
+Example:
 
 const newArr = myArr.join();
 
-// .join()
-// Converts all elements of an array into a string,
-// separated by the specified separator.
-// By default, the separator is a comma.
-
 console.log(myArr);
-console.log(newArr); // Output is a string
+// [0, 1, 2, 3, 4, 5]
 
-// Example:
-
-console.log([1, 2, 3].join());
-// "1,2,3"
+console.log(newArr);
+// "0,1,2,3,4,5"
 
 console.log([1, 2, 3].join(" - "));
 // "1 - 2 - 3"
 
 
-console.log("***************");
+SLICE AND SPLICE
+================
 
-
-// Slice and Splice
-
-console.log("A", myArr);
-// A [ 0, 1, 2, 3, 4, 5 ]
-
-
-/*
-slice()
+SLICE
+-----
 
 slice(start, end)
 
 - Returns a copy of a section of an array.
-- The start index is included.
-- The end index is NOT included.
+- start index is included.
+- end index is NOT included.
 - Does NOT modify the original array.
-*/
+- Returns a new array.
+
+
+Example:
+
+const myArr = [0, 1, 2, 3, 4, 5];
 
 const myNewArray1 = myArr.slice(1, 3);
 
 console.log(myNewArray1);
 // [1, 2]
 
-console.log("B", myArr);
-// Original array is unchanged:
-// B [0, 1, 2, 3, 4, 5]
+console.log(myArr);
+// [0, 1, 2, 3, 4, 5]
 
 
-/*
-splice()
+IMPORTANT:
+
+slice(1, 3)
+
+Index 1 → included
+Index 2 → included
+Index 3 → NOT included
+
+
+SPLICE
+-----
 
 splice(start, deleteCount)
 
@@ -157,58 +273,70 @@ splice(start, deleteCount)
 - start = index where the operation begins.
 - deleteCount = number of elements to remove.
 - Modifies the original array.
-- Returns an array containing the deleted elements.
+- Returns the deleted elements.
 
 IMPORTANT:
 splice() does NOT use an end index.
 
+
 Example:
 
-splice(1, 3)
-
-means:
-
-Start at index 1
-Remove 3 elements
-
-It removes:
-
-index:  1  2  3
-value:  1  2  3
-*/
-
+const myArr = [0, 1, 2, 3, 4, 5];
 
 const myNewArray2 = myArr.splice(1, 3);
-
-console.log("C", myArr);
-// C [0, 4, 5]
 
 console.log(myNewArray2);
 // [1, 2, 3]
 
+console.log(myArr);
+// [0, 4, 5]
 
-/*
-Slice vs Splice
+
+WHY?
+
+splice(1, 3)
+
+1 → Start at index 1
+3 → Remove 3 elements
+
+So:
+
+Index:  0  1  2  3  4  5
+Value:  0  1  2  3  4  5
+           └─────┘
+            Remove
+
+Remaining:
+
+[0, 4, 5]
+
+
+SLICE VS SPLICE
+===============
 
 slice(start, end)
-- end index is exclusive
-- Does NOT modify the original array
-- Returns a new array containing the selected elements
+
+- end is an index.
+- end is NOT included.
+- Does NOT modify the original array.
+- Returns a new array.
+
 
 splice(start, deleteCount)
-- Uses a number of elements to remove, NOT an end index
-- Modifies the original array
-- Returns the deleted elements
+
+- deleteCount is a number of elements.
+- Modifies the original array.
+- Returns the deleted elements.
 
 
 Example:
 
-const arr = [0, 1, 2, 3, 4, 5];
+const arr1 = [0, 1, 2, 3, 4, 5];
 
-arr.slice(1, 3);
+arr1.slice(1, 3);
 // [1, 2]
 
-arr;
+console.log(arr1);
 // [0, 1, 2, 3, 4, 5]
 
 
@@ -217,24 +345,29 @@ const arr2 = [0, 1, 2, 3, 4, 5];
 arr2.splice(1, 3);
 // [1, 2, 3]
 
-arr2;
+console.log(arr2);
 // [0, 4, 5]
 
 
-Easy way to remember:
+EASY WAY TO REMEMBER
+====================
 
-SLICE = section
+# SLICE
 
 slice(start, end)
 
 
-SPLICE = surgery
+# SPLICE
 
 splice(start, howMany)
-*/
 
 
-// splice() can also insert elements
+SPLICE CAN ALSO INSERT ELEMENTS
+================================
+
+splice() can also insert elements into an array.
+
+Example:
 
 const numbers = [1, 2, 5];
 
@@ -243,10 +376,54 @@ numbers.splice(2, 0, 3, 4);
 console.log(numbers);
 // [1, 2, 3, 4, 5]
 
-/*
+
+Explanation:
+
 splice(2, 0, 3, 4)
 
-2       -> Start at index 2
-0       -> Delete 0 elements
-3, 4    -> Insert 3 and 4
+2       → Start at index 2
+0       → Delete 0 elements
+3, 4    → Insert 3 and 4
+
+
+FINAL QUICK REVISION
+====================
+
+push()
+→ Add to end
+
+pop()
+→ Remove from end
+
+unshift()
+→ Add to beginning
+
+shift()
+→ Remove from beginning
+
+includes()
+→ Check if value exists
+
+indexOf()
+→ Find index of value
+
+join()
+→ Convert array to string
+
+slice()
+→ Copy a section
+→ End index is NOT included
+→ Does NOT modify original
+
+splice()
+→ Remove/insert elements
+→ Uses deleteCount, NOT an end index
+→ Modifies original
+
+[...array]
+→ Shallow copy
+
+structuredClone(array)
+→ Deep copy
+
 */
