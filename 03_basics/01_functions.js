@@ -25,6 +25,45 @@ console.log("Result: ", result); // undefined
 // addTwoNumbers(2, "a"); // 2a
 // addTwoNumbers(3, null) // 3
 
+// Examples and explanations
+
+function addition(num1, num2) {
+    // console.log(num1 + num2);
+    return num1 + num2
+}
+
+console.log(addition()); // NaN
+
+console.log(addition(4, 4)); // 8
+
+console.log(addition(4 + "4")); // 44undefined
+// addition("44")
+// "44" + undefined → "44undefined"
+
+console.log(addition(2, null)); // 2
+// null → intentionally empty → treated as 0 in numeric conversion
+
+console.log(addition(2, undefined)); // 2
+// undefined → value not provided → converts to NaN
+
+console.log(addition(2)); // 2
+/*
+
+Only one argument provided, but your function expects two:
+
+Then your function does:
+
+return 2 + undefined;
+
+2 + undefined // NaN
+
+Number(undefined) // NaN
+
+Key takeaway:
+If you don't pass an argument, JavaScript gives that parameter the value undefined.
+
+*/
+
 function addition(number1, number2) {
 
     // Method 1:
