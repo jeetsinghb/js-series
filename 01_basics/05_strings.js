@@ -28,9 +28,7 @@ const anotherString = gameName.slice(-10, 4) // returns empty value
 const anotherString = gameName.slice(2, 13) // ghtech-s-co
 
 /*
-The slice() method returns selected elements in an array, as a new array.
-The slice() method selects from a given start to a (not inclusive) given end.
-The slice() method does not change the original array.
+The slice() method of String values extracts a section of this string and returns it as a new string, without modifying the original string.
 */
 console.log(anotherString);
 
