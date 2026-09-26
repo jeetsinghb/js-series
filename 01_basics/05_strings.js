@@ -18,9 +18,7 @@ console.log(gameName.indexOf('g')); // 2
 
 const newString = gameName.substring(0, 7);  // ignores last value / won't include last value
 /*
-The substring() method extracts characters, between two indices (positions), from a string, and returns the substring.
-The substring() method extracts characters from start to end (exclusive).
-The substring() method does not change the original string.
+The substring() method of String values returns the part of this string from the start index up to and excluding the end index, or to the end of the string if no end index is supplied.
 */
 console.log(newString);
 
@@ -63,9 +61,12 @@ console.log(url.includes('john')); // return boolean value
 console.log(gameName.split('-'));
 
 /*
-The split() method splits a string into an array of substrings.
-The split() method returns the new array.
-The split() method does not change the original string. If (" ") is used as a separator, the string is split between words.
+- The JavaScript split() method is used to break a string into an array of substrings based on a given separator.
+-The separator can be a character, string, or regular expression.
+- It returns an array and does not change the original string.
+- An optional limit parameter can be used to control the number of splits.
+
+Syntax: str.split( separator, limit );
 
 Eg 1:
 - console.log(gameName.split('-'));
@@ -75,12 +76,6 @@ Eg 2:
 - console.log(gameName.split());
 - ['hightech-s-com']
 */
-
-
-
-
-
-
 
 
 
