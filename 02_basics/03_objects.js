@@ -20,8 +20,10 @@ const JsUser = {
 console.log(JsUser.name); // Tarjeet
 console.log(JsUser["name"]); // Tarjeet
 console.log(JsUser["full name"]); // Tarjeet Singh
-console.log(JsUser[mySymbol]); // -> JsUser.name -> Tarjeet
-// console.log(typeof JsUser[mySymbol]);
+console.log(JsUser[mySymbol]); // Tarjeet
+// console.log(typeof JsUser[mySymbol]); // string
+
+// Symbols are useful when you want a property key that is unique and unlikely to clash with other properties.
 
 JsUser.email = "developer@yahoo.com";
 // Object.freeze(JsUser) // Prevents the modification of existing property attributes and values, and prevents the addition of new properties.
