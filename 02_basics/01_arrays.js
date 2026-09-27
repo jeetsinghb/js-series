@@ -124,6 +124,12 @@ For simple arrays containing only primitive values,
 [...original] is usually enough.
 
 
+--- MORE ---
+
+- Spread, slice(), Array.from(), and concat() make shallow copies. structuredClone() makes a deep copy for supported data types.
+- But structuredClone() isn't a universal “copy absolutely anything” operation. Certain JavaScript values, especially functions and some weak/reference-related objects, cannot be cloned.
+- Simple rule: For normal data such as arrays, objects, strings, numbers, booleans, dates, etc., structuredClone() is a convenient deep-copy solution.
+
 ARRAY METHODS
 =============
 
