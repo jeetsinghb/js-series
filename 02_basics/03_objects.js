@@ -3,13 +3,13 @@
 
 // object literals
 
-const mySymbol = Symbol('key1');
+const mySymbol = Symbol('name');
 
 const JsUser = {
     name: "Tarjeet", // key: value
     "full name": "Tarjeet Singh",
-    // mySymbol: "myKey1", // incorrect way of adding Symbol
-    [mySymbol]: "myKey1", // correct way
+    // mySymbol: "Tarjeet", // incorrect way of adding Symbol
+    [mySymbol]: "Tarjeet", // correct way
     age: 22,
     location: "Mumbai",
     email: "developer@gmail.com",
@@ -20,7 +20,7 @@ const JsUser = {
 console.log(JsUser.name); // Tarjeet
 console.log(JsUser["name"]); // Tarjeet
 console.log(JsUser["full name"]); // Tarjeet Singh
-console.log(JsUser[mySymbol]);
+console.log(JsUser[mySymbol]); // -> JsUser.name -> Tarjeet
 // console.log(typeof JsUser[mySymbol]);
 
 JsUser.email = "developer@yahoo.com";
