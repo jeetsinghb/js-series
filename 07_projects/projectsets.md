@@ -68,7 +68,7 @@ btns.forEach((btn) => {
         <input type="text" id="weight" />
     </p>
 
-    <button type="button">Calculate</button>
+    <button>Calculate</button>
 
     <div id="results"></div>
 
@@ -141,3 +141,39 @@ setInterval(function () {
 }, 1000);
 ```
 
+## Project 4
+
+### HTML:
+
+```HTML
+<h1>Number guessing game</h1>
+
+<p>Try and guess a random number between 1 and 100.</p>
+<p>You have 10 attempts to guess the right number.</p>
+
+<br />
+
+<form class="form">
+    <label for="guessField" id="guess">Guess a number</label>
+
+    <input type="text" id="guessField" class="guessField" />
+
+    <input
+        type="submit"
+        id="subt"
+        value="Submit guess"
+        class="guessSubmit"
+    />
+</form>
+
+<div class="resultParas">
+    <p>Previous Guesses: <span class="guesses"></span></p>
+    <p>Guesses Remaining: <span class="lastResult">10</span></p>
+    <p class="lowOrHi"></p>
+</div>
+```
+
+### JS:
+
+```javascript
+```
