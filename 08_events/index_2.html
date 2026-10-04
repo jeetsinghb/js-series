@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+
+<body>
+    <h1>Events</h1>
+    <button id="start">START</button>
+    <button id="stop">STOP</button>
+</body>
+
+<script>
+
+    // Pracice 1:
+
+    // setInterval(function(){
+    //     console.log('HELLO', Date.now());
+    // }, 1000)
+
+    // Pracice 2:
+
+    // const sayDate = function (str) {
+    //     console.log(str, Date.now());
+    // }
+
+    // const intervalId = setInterval(sayDate, 1000, "hi");
+
+    // clearInterval(intervalId);
+
+    // Pracice 3:
+
+    // const start = document.querySelector('#start');
+    // const stop = document.querySelector('#stop');
+
+    // let intervalID;
+
+    // function startPrinting() {
+    //     intervalID = setInterval(function () {
+    //         console.log('Printing...');
+    //     }, 1000)
+    // }
+
+    // start.addEventListener('click', function () {
+    //     startPrinting();
+    // })
+
+    // stop.addEventListener('click', function () {
+    //     clearInterval(intervalID);
+    //     console.log('INTERVAL STOPPED');
+    // })
+
+    // Practice 4:
+
+    // With the solution above, every time you click START, you create another interval.
+
+    const start = document.querySelector('#start');
+    const stop = document.querySelector('#stop');
+
+    let intervalId = null;
+
+    function startPrinting() {
+        if (intervalId !== null) return;
+
+        intervalId = setInterval(function () {
+            console.log('Printing...');
+        }, 1000);
+    }
+
+    start.addEventListener('click', function () {
+        startPrinting();
+    });
+
+    stop.addEventListener('click', function () {
+        clearInterval(intervalId);
+        intervalId = null;
+    });
+
+</script>
+
+</html>
