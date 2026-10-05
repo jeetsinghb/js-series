@@ -279,6 +279,41 @@ function newGame() {
 }
 ```
 
+## Project 5
+
+### HTML:
+
+```html
+<div id="insert">
+  <div class="key">Press any key</div>
+</div>
+```
+
+### JS:
+
+```javascript
+const insert = document.getElementById('insert');
+
+window.addEventListener('keydown', (e) => {
+  insert.innerHTML = `
+  <div>
+    <table>
+      <tr>
+        <th>Key</th>
+        <th>Keycode</th>
+        <th>Code</th>
+      </tr>
+      <tr>
+        <td>${e.key === ' ' ? 'space' : e.key}</td>
+        <td>${e.keyCode}</td>
+        <td>${e.code}</td>
+      </tr>
+    </table>
+  </div>
+  `;
+});
+```
+
 ## Project 6
 
 ### HTML:
