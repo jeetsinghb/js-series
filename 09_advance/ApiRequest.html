@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XMLHttpRequest</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 50px 10px;
+    }
+</style>
+
+<body style="background-color: #212121; color: white">
+    <pre>
+        0	UNSENT -> Client has been created. open() not called yet.
+        1	OPENED -> open() has been called.
+        2	HEADERS_RECEIVED ->	send() has been called, and headers and status are available.
+        3	LOADING -> Downloading; responseText holds partial data.
+        4	DONE -> The operation is complete.
+    </pre>
+
+    <pre>
+        The XMLHttpRequest (XHR) object is a built-in browser API that allows you to make asynchronous HTTP and HTTPS requests from JavaScript. Although it contains "XML" in the name, it can handle any data format, including JSON, HTML, and plain text.
+        While modern projects typically use the newer, promise-based fetch() API, XMLHttpRequest remains widely supported and is necessary for legacy code or specific advanced use cases like tracking file uploadprogress.
+    </pre>
+
+    <img src="" id="profile-pic" />
+
+    <br /><br /><br />
+
+    <a style="color:white;" href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest" target="_blank">Learn More</a>
+</body>
+
+<script>
+    const profileImg = document.querySelector('#profile-pic');
+    let profile = '';
+
+    const requestURL = "https://api.github.com/users/jeetsinghb";
+    const xhr = new XMLHttpRequest();
+
+    // console.log(xhr.readyState); -> State 0
+    xhr.open('GET', requestURL);
+
+    xhr.onreadystatechange = function () {
+        // console.log(xhr.readyState); -> [2, 3, 4]
+
+        if (xhr.readyState === 4) {
+            // console.log(this.responseText);
+
+            // const data = this.responseText;
+            // console.log(typeof data); // string
+
+            const data = JSON.parse(this.response); // parse converts string into object
+
+            console.log(data);
+            // console.log(data.bio);
+
+            profile = data.avatar_url;
+
+            console.log(profile)
+
+            profileImg.setAttribute('src', profile)
+
+        }
+    }
+
+    // console.log(xhr.readyState); - State 1
+    xhr.send();
+</script>
+
+</html>
