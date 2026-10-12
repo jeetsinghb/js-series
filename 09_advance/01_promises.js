@@ -1,3 +1,16 @@
+/**
+ * The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+ * JavaScript Promises make handling asynchronous operations like API calls, file loading, or time delays easier. Think of a Promise as a placeholder for a value that will be available in the future. It can be in one of three states
+ * 
+ * Pending: The task is in the initial state.
+ * Fulfilled: The task was completed successfully, and the result is available.
+ * Rejected: The task failed, and an error is provided.
+ * 
+ @ RESOURCES:
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+ * https://www.geeksforgeeks.org/javascript/javascript-promise/
+ */
+
 // Exercise 1:
 
 // callback
