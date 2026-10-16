@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bind - React</title>
+</head>
+
+<body>
+    <button>Button Clicked</button>
+</body>
+
+<script>
+    class React {
+        constructor() {
+            this.library = "React"
+            this.server = "https://localhost:3000"
+
+            // requirement
+            document
+                .querySelector('button')
+                .addEventListener('click', this.handleClick.bind(this))
+                
+                // added .bind(this) -> upon button click now we are binding the context of the object created using class React
+        }
+
+        handleClick() {
+            console.log('Button Clicked!');
+            console.log(this);
+        }
+    }
+
+    const app = new React();
+</script>
+
+<!-- 
+
+So, remeber this line "When used in event handlers, this refers to the element that triggered the event." 
+So, here even though we create an instance of react class using new keyword and store that new created object in the app variable then that object is having server and library properties and handleClick() fn,
+But when we are calling the fn handle click inside addEventListener() the element button is calling the function handleClick() so here this refers to the button element not the context of object created using class React,
+So, here It is priniting <button>...</button> but when we use bind() then we are actually binding the context of the object created using class React
+
+-->
+
+</html>
